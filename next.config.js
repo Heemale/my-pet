@@ -6,6 +6,7 @@ const nextConfig = {
   },
   env:{
     API_HOST:'http://101.43.35.156:3001',
+    // API_HOST:'http://127.0.0.1:3001',
     HOST:'https://rinkeby.infura.io/v3/770daaf97ee14e0aa77ac105bbcdd79f',
     CONTRACT_ABI:[
       {

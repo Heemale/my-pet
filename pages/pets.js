@@ -18,7 +18,7 @@ export async function getStaticProps(context) {
     }
 }
 
-const pets = (props) => {
+const Pets = (props) => {
 
     const [activeKey, setActiveKey] = useState(null);
 
@@ -60,4 +60,4 @@ const pets = (props) => {
     )
 };
 
-export default pets;
+export default Pets;

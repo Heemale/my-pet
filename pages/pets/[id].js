@@ -44,7 +44,7 @@ export async function getStaticPaths() {
     }
 }
 
-const petDetail = (props) => {
+const PetDetail = (props) => {
     console.log('props',props);
     const petData = props.petData;
     const id = props.id;
@@ -104,4 +104,4 @@ const petDetail = (props) => {
     )
 };
 
-export default petDetail;
+export default PetDetail;

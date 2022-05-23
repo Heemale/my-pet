@@ -37,19 +37,19 @@ export async function getStaticPaths() {
     }
 }
 
-const ActionCell = ({rowData, dataKey, ...props}) => {
-    function handleAction() {
-        alert(`id:${rowData[dataKey]}`);
-    }
+// const ActionCell = ({rowData, dataKey, ...props}) => {
+//     function handleAction() {
+//         alert(`id:${rowData[dataKey]}`);
+//     }
+//
+//     return (
+//         <Cell {...props} className="link-group">
+//             <IconButton appearance="subtle" onClick={handleAction} icon={<Edit2/>}/>
+//         </Cell>
+//     );
+// };
 
-    return (
-        <Cell {...props} className="link-group">
-            <IconButton appearance="subtle" onClick={handleAction} icon={<Edit2/>}/>
-        </Cell>
-    );
-};
-
-const userDetail = (props) => {
+const UserDetail = (props) => {
     console.log({props});
     const [activeKey, setActiveKey] = useState(null);
 
@@ -186,4 +186,4 @@ const userDetail = (props) => {
     );
 };
 
-export default userDetail;
+export default UserDetail;

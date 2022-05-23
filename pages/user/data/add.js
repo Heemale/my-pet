@@ -22,7 +22,7 @@ const model = Schema.Model({
     pictureHash: StringType().isRequired('This field is required.'),
 });
 
-const userDataAdd = () => {
+const UserDataAdd = () => {
 
     const {handleSetUserData} = callContract();
 
@@ -92,4 +92,4 @@ const userDataAdd = () => {
     )
 };
 
-export default userDataAdd;
+export default UserDataAdd;

@@ -32,7 +32,7 @@ export async function getStaticPaths() {
     }
 }
 
-const applicationDetail = (props) => {
+const ApplicationDetail = (props) => {
     console.log(props.applicationData);
     // const {applicant, petId, timestamp} = props.applicationData;
 
@@ -79,4 +79,4 @@ const applicationDetail = (props) => {
     )
 };
 
-export default applicationDetail;
+export default ApplicationDetail;

@@ -22,7 +22,7 @@ const model = Schema.Model({
     pictureHash: StringType().isRequired('This field is required.'),
 });
 
-const petDataAdd = () => {
+const PetDataAdd = () => {
 
     const {handleSetPetData} = callContract();
 
@@ -132,4 +132,4 @@ const petDataAdd = () => {
     )
 };
 
-export default petDataAdd;
+export default PetDataAdd;

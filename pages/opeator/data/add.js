@@ -22,7 +22,7 @@ const model = Schema.Model({
     pictureHash: StringType().isRequired('This field is required.'),
 });
 
-const opeatorDataAdd = () => {
+const OpeatorDataAdd = () => {
 
     const {handleSetOpeatorData} = callContract();
 
@@ -100,4 +100,4 @@ const opeatorDataAdd = () => {
     )
 };
 
-export default opeatorDataAdd;
+export default OpeatorDataAdd;
