@@ -1,6 +1,6 @@
 import { React } from '@nextui-org/react';
 
-const EyeIcon = ({
+export const EyeIcon = ({
                             fill,
                             size,
                             height,
@@ -33,5 +33,3 @@ const EyeIcon = ({
         </svg>
     );
 };
-
-export default EyeIcon;

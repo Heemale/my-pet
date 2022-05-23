@@ -1,6 +1,6 @@
 import { React } from '@nextui-org/react';
 
-const EditIcon = ({
+export const EditIcon = ({
                              fill,
                              size,
                              height,
@@ -43,5 +43,3 @@ const EditIcon = ({
         </svg>
     );
 };
-
-export default EditIcon;

@@ -1,6 +1,6 @@
 import { React } from '@nextui-org/react';
 
-const DeleteIcon = ({
+export const DeleteIcon = ({
                                fill,
                                size,
                                height,
@@ -54,5 +54,3 @@ const DeleteIcon = ({
         </svg>
     );
 };
-
-export default DeleteIcon;
