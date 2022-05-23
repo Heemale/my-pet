@@ -1,8 +1,8 @@
 import {Table, Row, Col, Tooltip, User, Text} from "@nextui-org/react";
-import {StyledBadge} from "./StyledBadge";
-import {IconButton} from "./IconButton";
-import {EditIcon} from "./EditIcon";
-import {DeleteIcon} from "./DeleteIcon";
+import {StyledBadge} from "../../component/table/StyledBadge";
+import {IconButton} from "../../component/table/IconButton";
+import {EditIcon} from "../../component/table/EditIcon";
+import {DeleteIcon} from "../../component/table/DeleteIcon";
 import React, {useState} from "react";
 import NavBarInstance from '../../component/NavbarInstance'
 import styles from "../../styles/Home.module.css";
