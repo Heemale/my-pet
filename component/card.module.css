@@ -1,0 +1,29 @@
+.cardLink {
+    margin: auto;
+    --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 0 transparent,
+    0 0 #0000, 0 0 transparent,
+    0 0 #0000, 0 0 transparent,
+    0 0 #0000, 0 0 transparent;
+    border-color: var(--text-white-100);
+    border-radius: 0.75rem;
+}
+
+.container {
+    border-radius: 0.75rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    backdrop-filter: blur(10px);
+}
+
+.cardHeader{
+    margin-bottom: 0.5rem;
+}
+
+.cardImageWrapper{
+    margin-bottom: 0.5rem;
+}

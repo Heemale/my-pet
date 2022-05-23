@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="../public/js/jquery-3.5.1.min.js"></script>
+<script>
+
+    //questions map():string => []
+    const questions = new Map();
+    //myArray 从数据库获取的数据
+    let myArray = new Array();
+
+    $.ajax({
+        type: "post",
+        url:'http://127.0.0.1:3001/api/tab_video/question/list/search/id=' + 1,
+        contentType: "application/json",
+        dataType: "jsonp",
+        success: function (data) {
+            // console.log('原始数据：data:',data[0].question_list);
+            let tempArray1 = new Array();
+
+            //todo:去掉杠号
+            let tempArray0 = data[0].question_list.split("-");
+            tempArray0.forEach(function (item) {
+                tempArray1.push(item)
+            });
+            // console.log('1.去掉杠号：tempArray1[]',tempArray1);
+
+            tempArray1.forEach(function (item,index) {
+                //todo:去掉大括号
+                let tempArray2;
+                tempArray2 = removeBlock(item);
+                // console.log('2.去掉大括号：tempArray2[]',tempArray2);
+
+                //todo：去掉逗号
+                tempArray2 = tempArray2.split(",");
+                // console.log("3.去掉逗号：tempArray2[]",tempArray2);
+
+                let time;
+                let question_id;
+                tempArray2.forEach(function (item) {
+                    //todo：去掉冒号
+                    let tempArray3 = item.split(":");
+                    // console.log("4.去掉冒号：tempArray3[]",tempArray3);
+
+                    if (tempArray3[0] == 'question_id'){
+                        question_id = tempArray3[1]
+                    }
+                    if (tempArray3[0] == 'time'){
+                        time = tempArray3[1]
+                    }
+                });
+                // console.log('question_id=>time：[index:',index,']',question_id,"=>",time);
+
+                //todo：临时json
+                let tempJson = {
+                    time:time,
+                    question_id:question_id
+                };
+                // console.log('临时json：',tempJson);
+
+                //todo：push到myArray
+                myArray.push(tempJson);
+
+
+
+            });
+            console.log('从数据库获得的数据：',myArray);
+
+            //todo:遍历从数据库获取的数组
+            myArray.forEach(function (item) {
+                let mapElement = questions.get(item.time.toString());
+                if (mapElement != undefined){
+                    //todo:如果存在，get然后push再set
+                    let temp = questions.get(item.time.toString());
+                    temp.push(item.question_id.toString());
+                    questions.set(item.time.toString(),temp)
+                }
+                if (mapElement == undefined){
+                    //todo:如果不存在，push再set
+                    let temp = new Array();
+                    temp.push(item.question_id.toString());
+                    questions.set(item.time.toString(),temp);
+                }
+            });
+
+            questions.forEach(function (value, key, map) {
+                console.log('时间点：',key,'；问题id：',value);
+                let index = Math.floor((Math.random()*value.length));
+                console.log('随机问题id：',value[index]);
+                console.log('------------');
+            });
+
+        }
+    });
+
+
+    //todo:封装：去除{}
+    function removeBlock (str) {
+        if (str) {
+            var reg = /^\{/gi;
+            var reg2 = /\}$/gi;
+            str = str.replace(reg, '');
+            str = str.replace(reg2, '');
+            return str
+        } else {
+            return str
+        }
+    }
+
+
+</script>
+</html>

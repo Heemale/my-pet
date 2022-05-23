@@ -1,0 +1,13 @@
+.layout{
+    height: 100%;
+}
+
+.container {
+    display: grid;
+    min-height: 100vh;
+    padding: 1.75rem 1.75rem 1.75rem 1.75rem;
+}
+
+.listText{
+    text-align: center;
+}
